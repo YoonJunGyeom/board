@@ -18,7 +18,7 @@
   <!-- 오라클 사용자 비밀번호 -->
   		<property value="mystudypw" name="password" />
 	</bean>
-
+	
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="SqlSessionFactory">
 	  <property name="dataSource" ref="dataSource" />
 	  <property value="/resources/mybatis-config.xml" name="configLocation" />
@@ -26,4 +26,5 @@
 	</bean>
 	
 	<mybatis-spring:scan base-package="com.board.mapper"></mybatis-spring:scan>
+	
 </beans>
