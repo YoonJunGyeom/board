@@ -10,5 +10,9 @@ public interface BoardService {
 
 	int regi(BoardDTO dto) throws Exception;
 
-	BoardDTO view(int seq); 
+	BoardDTO view(int seq);
+
+	int update(BoardDTO dto);
+
+	int delete(int seq); 
 }

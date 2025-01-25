@@ -14,6 +14,10 @@ int regi(BoardDTO dto);
 
 BoardDTO view(int seq);
 
-void updateReadCount(int seq); 
+void updateReadCount(int seq);
+
+int delete(int seq);
+
+int update(BoardDTO dto); 
 
 }

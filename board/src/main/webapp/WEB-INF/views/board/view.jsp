@@ -11,10 +11,13 @@
 </head>
 <body>
 <form id="frm">
+<input type="hidden" value="" name="seq" id="seq">
 <div>제목 : ${view.subject} 조회수 : ${view.readCount}</div>
 <div>작성자 : ${view.name}</div>
 <div>내용 : ${view.content} </div>
 <button type="button" onclick='location.href="/board/list"'>목록</button>
+<button type="button" onclick='fn_goUpdateView(${view.seq})'>수정</button>
+<button type="button" onclick='fn_boardDelete(${view.seq})'>삭제</button>
 </form>
 </body>
 </html>

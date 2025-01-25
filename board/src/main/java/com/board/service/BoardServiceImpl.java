@@ -35,4 +35,14 @@ public class BoardServiceImpl implements BoardService {
 		return dao.view(seq);
 	}
 
+	@Override
+	public int update(BoardDTO dto) {
+		return dao.update(dto);
+	}
+
+	@Override
+	public int delete(int seq) {
+		return dao.delete(seq);
+	}
+
 }
