@@ -39,15 +39,11 @@ public class BoardController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/regi", method = RequestMethod.POST)
-	public  String regi(Locale locale, Model model, HttpServletRequest request) throws Exception {
+	public  String regi(Locale locale, Model model, BoardDTO dto) throws Exception {
 		
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss"); 
 		
-		BoardDTO dto = new BoardDTO();
-		dto.setName(request.getParameter("name"));
-		dto.setContent(request.getParameter("content"));
-		dto.setSubject(request.getParameter("subject"));
 		dto.setReg_date(format.format(date));
 		
 		if(service.regi(dto) == 1) {
@@ -63,4 +59,5 @@ public class BoardController {
 		model.addAttribute("view", dto);
 		return "/board/view";
 	}
+	
 }
