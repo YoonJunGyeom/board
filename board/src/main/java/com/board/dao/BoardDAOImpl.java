@@ -5,6 +5,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.board.domain.BoardDTO;
+
 @Repository
 public class BoardDAOImpl implements BoardDAO {
 	
@@ -16,6 +18,26 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public List list() throws Exception {
 		return sqlSession.selectList(namespace + ".list");
+	}
+	
+	@Override
+	public Integer getMaxSeq() {
+		return sqlSession.selectOne(namespace+".maxSeq");
+	}
+
+	@Override
+	public int regi(BoardDTO dto) {
+		return sqlSession.insert(namespace+".regi", dto);
+	}
+
+	@Override
+	public BoardDTO view(int seq) {
+		return sqlSession.selectOne(namespace+".view", seq);
+	}
+
+	@Override
+	public void updateReadCount(int seq) {
+		sqlSession.update(namespace+".updateReadCount", seq);
 	}
 
 }

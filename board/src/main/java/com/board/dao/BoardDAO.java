@@ -6,6 +6,14 @@ import com.board.domain.BoardDTO;
 
 public interface BoardDAO {
  
- public List list() throws Exception; 
+ public List list() throws Exception;
+
+Integer getMaxSeq();
+
+int regi(BoardDTO dto);
+
+BoardDTO view(int seq);
+
+void updateReadCount(int seq); 
 
 }
