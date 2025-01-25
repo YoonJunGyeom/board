@@ -27,4 +27,7 @@
 	
 	<mybatis-spring:scan base-package="com.board.mapper"></mybatis-spring:scan>
 	
+	<bean id="SqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg ref="SqlSessionFactory"></constructor-arg>
+</bean>
 </beans>
